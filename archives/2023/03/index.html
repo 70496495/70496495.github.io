@@ -177,21 +177,11 @@
       
         
         <li class="menu-item menu-item-home">
-          <a href="/%20" rel="section">
+          <a href="/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
             首页
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-categories">
-          <a href="/categories/%20" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
-            
-            分类
           </a>
         </li>
       
@@ -201,7 +191,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
             
-            others
+            其它
           </a>
         </li>
       
@@ -237,7 +227,7 @@
         
           
         
-        嗯..! 目前共计 5 篇日志。 继续努力。
+        嗯..! 目前共计 2 篇日志。 继续努力。
       </span>
 
       
@@ -261,46 +251,9 @@
 
       <h2 class="post-title">
         
-            <a class="post-title-link" href="/2023/03/02/%E9%9B%86%E4%BD%93%E8%A1%8C%E5%8A%A8%E7%9A%84%E9%80%BB%E8%BE%91/" itemprop="url">
+            <a class="post-title-link" href="/2023/03/04/AI%E7%94%BB%E5%9B%BE/" itemprop="url">
               
-                <span itemprop="name">《集体行动的逻辑》</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2023-03-02T13:16:23+08:00"
-              content="2023-03-02" >
-          03-02
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2023/03/02/xss20%E5%85%B3/" itemprop="url">
-              
-                <span itemprop="name">xss20关</span>
+                <span itemprop="name">AI画图</span>
               
             </a>
         
@@ -308,9 +261,9 @@
 
       <div class="post-meta">
         <time class="post-time" itemprop="dateCreated"
-              datetime="2023-03-02T00:00:00+08:00"
-              content="2023-03-02" >
-          03-02
+              datetime="2023-03-04T17:08:53+08:00"
+              content="2023-03-04" >
+          03-04
         </time>
       </div>
 
@@ -409,7 +362,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -426,15 +379,6 @@
               </div>
             
 
-            
-              
-              
-              <div class="site-state-item site-state-tags">
-                
-                  <span class="site-state-item-count">1</span>
-                  <span class="site-state-item-name">标签</span>
-                
-              </div>
             
 
           </nav>
@@ -670,6 +614,28 @@ setInterval("toggleSound()",1);
 
 
 
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'njAdxAFOr5fbthnycDquzQyr-gzGzoHsz',
+        appKey: '96UPb6TXLjmptt09HWEzucCQ',
+        placeholder: 'Just go go',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
 
 
 
