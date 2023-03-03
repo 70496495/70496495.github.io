@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="tag1," />
 
 
 
@@ -79,14 +79,17 @@
 
 
 
+<meta name="description" content="什么description">
 <meta property="og:type" content="article">
-<meta property="og:title" content="chatGPT">
-<meta property="og:url" content="http://example.com/2023/03/01/chatGPT/index.html">
+<meta property="og:title" content="xss20关">
+<meta property="og:url" content="http://example.com/2023/03/02/xss20%E5%85%B3/index.html">
 <meta property="og:site_name" content="酷热覆天,喝断晚晴">
+<meta property="og:description" content="什么description">
 <meta property="og:locale">
-<meta property="article:published_time" content="2023-03-01T09:08:53.000Z">
-<meta property="article:modified_time" content="2023-03-02T09:22:23.354Z">
+<meta property="article:published_time" content="2023-03-01T16:00:00.000Z">
+<meta property="article:modified_time" content="2023-03-02T13:34:38.895Z">
 <meta property="article:author" content="W">
+<meta property="article:tag" content="tag1">
 <meta name="twitter:card" content="summary">
 
 
@@ -117,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://example.com/2023/03/01/chatGPT/"/>
+  <link rel="canonical" href="http://example.com/2023/03/02/xss20关/"/>
 
 
 
 
 
-  <title>chatGPT | 酷热覆天,喝断晚晴</title>
+  <title>xss20关 | 酷热覆天,喝断晚晴</title>
   
 
 
@@ -240,7 +243,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/01/chatGPT/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/03/02/xss20%E5%85%B3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="">
@@ -257,7 +260,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">chatGPT</h1>
+          <h1 class="post-title" itemprop="name headline">xss20关</h1>
         
 
         <div class="post-meta">
@@ -269,8 +272,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2023-03-01T17:08:53+08:00">
-                2023-03-01
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2023-03-02T00:00:00+08:00">
+                2023-03-02
               </time>
             
 
@@ -279,6 +282,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/category1/" itemprop="url" rel="index">
+                    <span itemprop="name">category1</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -298,6 +323,10 @@
           
 
           
+              <div class="post-description">
+                  什么description
+              </div>
+          
 
         </div>
       </header>
@@ -312,13 +341,43 @@
       
 
       
-        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=298 height=52 src="//music.163.com/outchain/player?type=2&id=25910905&auto=0&height=32"></iframe>
+         <span id="more"></span> 
 
- <span id="more"></span>
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=298 height=52 src="//music.163.com/outchain/player?type=2&id=2019330082&auto=0&height=32"></iframe>
+<p>动态站点会受到Cross Site Scripting的威胁，即网页的输出可能被注入特定文本，输出的同时文本视为语句执行，静态站点没有这种威胁，分为两或三类：非存储&#x2F;反射型、存储&#x2F;持久型、DOM型；内部 外部▲，亦可看作把某些信息覆盖掉而执行指定JavaScript语句的“缓冲区溢出攻击”，自1990</p>
+<p>原理：xss漏洞设法通过php的输出函数将javascript代码输出到html页面中，由用户本地浏览器执行，故关键是寻找参数未过滤的输出函数。php中常见输出函数有：<code>print</code>、<code>print_r</code>、<code>echo</code>、<code>printf</code>、<code>sprintf</code>、<code>die</code>、<code>var_dump</code>、<code>var_export</code></p>
+<p>常出现位置：文章发表、评论、留言、资料注册、修改</p>
+<p>限制条件：需要浏览器版本、内核未过滤XSS攻击（如谷歌Edge火狐等可以，而IE会拦截）</p>
+<p>判断存在性：</p>
+<p>①对比输出和输入的字符，观察有无字符被过滤</p>
+<p>②看html</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">test</span></span><br></pre></td></tr></table></figure>
 
-<p>云 Onedrive 蓝奏 </p>
-<p><a target="_blank" rel="noopener" href="https://qddmercny4.feishu.cn/sheets/shtcnMklYu0WsXEDUXXanrSEB2m">https://qddmercny4.feishu.cn/sheets/shtcnMklYu0WsXEDUXXanrSEB2m</a></p>
+
+
+<p>html嵌入JS代码的三种方式：</p>
+<p>①事件句柄 嵌入，以html标签的属性存在（类似于css的内联定义）：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">...<span class="comment">/**/</span></span><br><span class="line">&lt;body&gt;</span><br><span class="line">	<span class="language-xml"><span class="tag">&lt;<span class="name">button</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">		<span class="attr">onclick</span>=<span class="string">&quot;alert(&#x27;hello JavaScript&#x27;);&quot;</span> <span class="attr">id</span>=<span class="string">&quot;btn&quot;</span> <span class="attr">class</span>=<span class="string">&quot;anniu&quot;</span>&gt;</span>hello JavaScript</span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line">&lt;/body&gt;</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+
+<p>②脚本块嵌入（类似于css的样式块定义），脚本块中的程序在页面打开时自顶向下自动执行，（脚本块放在HTML任一标签内都能执行▲)：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line"><span class="comment">/*&lt;body&gt;或任一标签，如&lt;a&gt;,&lt;img&gt;*/</span></span><br><span class="line">&lt;body&gt;</span><br><span class="line">	<span class="language-xml"><span class="tag">&lt;<span class="name">script</span> </span></span></span><br><span class="line"><span class="tag"><span class="language-xml">		<span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span>&gt;</span><span class="language-javascript"><span class="title function_">alert</span>(<span class="string">&quot;脚本块执行&quot;</span>);</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">	</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line">&lt;/body&gt;</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+
+<p>三、引入外部js文件（类似于css中引入外部css文件），推荐使用；</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;head&gt;</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Title<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span> <span class="attr">src</span>=<span class="string">&quot;../css/mycss/js.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<p>部署：①网址：test.ctf8.com</p>
+<hr>
+<p>1</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span> </span><br><span class="line">...</span><br><span class="line"><span class="variable">$str</span> = <span class="variable">$_GET</span>[<span class="string">&quot;name&quot;</span>];</span><br><span class="line"><span class="keyword">echo</span> <span class="string">&quot;&lt;h2 align=center&gt;欢迎用户&quot;</span>.<span class="variable">$str</span>.<span class="string">&quot;&lt;/h2&gt;&quot;</span>;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>用户输入内容以字符串形式拼接到标签<code>&lt;h2&gt;文本&lt;/h2&gt;</code>中，并输出该标签到html页面<br>使用脚本块嵌入，payload: <code>...php?name</code>&#x3D;<code>&lt;script&gt;alert(123)&lt;/script&gt;</code><br>好像嵌不到已有标签<code>&lt;h2&gt;&lt;/h2&gt;</code>里，不知道<code>&lt;/h2&gt;</code>里能不能写东西；<br>如果<code>$str</code>ban了<code>script</code>一词，或可<code>&lt;a onclick=&quot;alert(123);&quot;&gt;test&lt;/a&gt;</code>，等会看怎么改进js▲；这个需要点一下，也通关了</p>
+<p>2</p>
+<p>&lt;实体编码后失去原</p>
+<p>url编码不存在转义功能，实体编码才是转义 ’被编码了为什么能被闭合掉 ‘在实体编码后就是普通字符 实体编码作用是将<code>\&lt;</code>转移掉，’无论是否实体编码都是有闭合效果，不算特殊字符 懂了 </p>
+<p><a href="#jump1">跳转到点</a></p>
+<p><a href="#jump1">跳转到 点</a></p>
+<p>1 图床</p>
+<p>2 分类、权限</p>
+<p>3 CDN</p>
 
       
     </div>
@@ -334,6 +393,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/tag1/" rel="tag"># tag1</a>
+          
+        </div>
+      
 
       
       
@@ -343,8 +408,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/1919/01/19/test1/" rel="next" title="test1">
-                <i class="fa fa-chevron-left"></i> test1
+              <a href="/2023/03/01/chatGPT/" rel="next" title="chatGPT">
+                <i class="fa fa-chevron-left"></i> chatGPT
               </a>
             
           </div>
@@ -353,8 +418,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2023/03/02/xss20%E5%85%B3/" rel="prev" title="xss20关">
-                xss20关 <i class="fa fa-chevron-right"></i>
+              <a href="/2023/03/02/%E9%9B%86%E4%BD%93%E8%A1%8C%E5%8A%A8%E7%9A%84%E9%80%BB%E8%BE%91/" rel="prev" title="《集体行动的逻辑》">
+                《集体行动的逻辑》 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
