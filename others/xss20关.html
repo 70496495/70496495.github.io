@@ -119,7 +119,7 @@
 <meta property="og:description" content="什么description">
 <meta property="og:locale">
 <meta property="article:published_time" content="2023-03-01T16:00:00.000Z">
-<meta property="article:modified_time" content="2023-03-03T08:21:43.108Z">
+<meta property="article:modified_time" content="2023-03-04T01:45:24.482Z">
 <meta property="article:author" content="W">
 <meta property="article:tag" content="tag1">
 <meta name="twitter:card" content="summary">
@@ -282,14 +282,14 @@
 <p>限制条件：需要浏览器版本、内核未过滤XSS攻击（如谷歌Edge火狐等可以，而IE会拦截）</p>
 <p>判断存在性：</p>
 <p>①对比输出和输入的字符，观察有无字符被过滤</p>
-<p>②看html</p>
+<p>②看.html、.php</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">test</span></span><br></pre></td></tr></table></figure>
 
 
 
-<p>html嵌入JS代码的三种方式：</p>
+<p>S:html中嵌入JS代码的三种方式：</p>
 <p>①事件句柄 嵌入，以html标签的属性存在（类似于css的内联定义）：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">...<span class="comment">/**/</span></span><br><span class="line">&lt;body&gt;</span><br><span class="line">	<span class="language-xml"><span class="tag">&lt;<span class="name">button</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">		<span class="attr">onclick</span>=<span class="string">&quot;alert(&#x27;hello JavaScript&#x27;);&quot;</span> <span class="attr">id</span>=<span class="string">&quot;btn&quot;</span> <span class="attr">class</span>=<span class="string">&quot;anniu&quot;</span>&gt;</span>hello JavaScript</span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line">&lt;/body&gt;</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">...<span class="comment">/**/</span></span><br><span class="line">&lt;body&gt;</span><br><span class="line">	<span class="language-xml"><span class="tag">&lt;<span class="name">button</span></span></span></span><br><span class="line"><span class="tag"><span class="language-xml">		<span class="attr">onclick</span>=<span class="string">&quot;alert(&#x27;事件句柄嵌入&#x27;);&quot;</span> <span class="attr">id</span>=<span class="string">&quot;btn&quot;</span> <span class="attr">class</span>=<span class="string">&quot;anniu&quot;</span>&gt;</span>hello JavaScript</span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line">&lt;/body&gt;</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
 
 <p>②脚本块嵌入（类似于css的样式块定义），脚本块中的程序在页面打开时自顶向下自动执行，（脚本块放在HTML任一标签内都能执行▲)：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line"><span class="comment">/*&lt;body&gt;或任一标签，如&lt;a&gt;,&lt;img&gt;*/</span></span><br><span class="line">&lt;body&gt;</span><br><span class="line">	<span class="language-xml"><span class="tag">&lt;<span class="name">script</span> </span></span></span><br><span class="line"><span class="tag"><span class="language-xml">		<span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span>&gt;</span><span class="language-javascript"><span class="title function_">alert</span>(<span class="string">&quot;脚本块执行&quot;</span>);</span></span></span><br><span class="line"><span class="language-javascript"><span class="language-xml">	</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line">&lt;/body&gt;</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
@@ -299,11 +299,23 @@
 
 <p>部署：①网址：test.ctf8.com</p>
 <hr>
+<p>设法让页面执行js脚本<code>&lt;script&gt;alert(123)&lt;/script&gt;</code></p>
 <p>1</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span> </span><br><span class="line">...</span><br><span class="line"><span class="variable">$str</span> = <span class="variable">$_GET</span>[<span class="string">&quot;name&quot;</span>];</span><br><span class="line"><span class="keyword">echo</span> <span class="string">&quot;&lt;h2 align=center&gt;欢迎用户&quot;</span>.<span class="variable">$str</span>.<span class="string">&quot;&lt;/h2&gt;&quot;</span>;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span> </span><br><span class="line"><span class="comment">//...</span></span><br><span class="line"><span class="variable">$str</span> = <span class="variable">$_GET</span>[<span class="string">&quot;name&quot;</span>];</span><br><span class="line"><span class="keyword">echo</span> <span class="string">&quot;&lt;h2 align=center&gt;欢迎用户&quot;</span>.<span class="variable">$str</span>.<span class="string">&quot;&lt;/h2&gt;&quot;</span>;</span><br><span class="line"><span class="meta">?&gt;</span></span><br></pre></td></tr></table></figure>
 
-<p>用户输入内容以字符串形式拼接到标签<code>&lt;h2&gt;文本&lt;/h2&gt;</code>中，并输出该标签到html页面<br>使用脚本块嵌入，payload: <code>...php?name</code>&#x3D;<code>&lt;script&gt;alert(123)&lt;/script&gt;</code><br>好像嵌不到已有标签<code>&lt;h2&gt;&lt;/h2&gt;</code>里，不知道<code>&lt;/h2&gt;</code>里能不能写东西；<br>如果<code>$str</code>ban了<code>script</code>一词，或可<code>&lt;a onclick=&quot;alert(123);&quot;&gt;test&lt;/a&gt;</code>，等会看怎么改进js▲；这个需要点一下，也通关了</p>
+<p>页面：用户在url中输入内容，其以字符串形式拼接到标签<code>&lt;h2&gt;欢迎用户xxx&lt;/h2&gt;</code>中，并输出该标签到html页面<br>①使用脚本块嵌入，payload: <code>...php?name</code>&#x3D;<code>&lt;script&gt;alert(123)&lt;/script&gt;</code><br>好像嵌不到已有标签<code>&lt;h2&gt;&lt;/h2&gt;</code>里，不知道<code>&lt;/h2&gt;</code>里能不能写东西；<br>②如果<code>$str</code>ban了<code>script</code>一词，或可<code>&lt;a onclick=&quot;alert(123);&quot;&gt;test&lt;/a&gt;</code>，等会看怎么改进js▲；这个需要点一下，也通关了</p>
 <p>2</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span> </span><br><span class="line"><span class="comment">//...</span></span><br><span class="line"><span class="variable">$str</span> = <span class="variable">$_GET</span>[<span class="string">&quot;keyword&quot;</span>];</span><br><span class="line"><span class="keyword">echo</span> <span class="string">&quot;&lt;h2 align=center&gt;没有找到和&quot;</span>.<span class="title function_ invoke__">htmlspecialchars</span>(<span class="variable">$str</span>).<span class="string">&quot;相关的结果.&lt;/h2&gt;&quot;</span>.<span class="string">&#x27;&lt;center&gt;</span></span><br><span class="line"><span class="string">&lt;form action=level2.php method=GET&gt;</span></span><br><span class="line"><span class="string">&lt;input name=keyword value=&quot;&#x27;</span>.<span class="variable">$str</span>.<span class="string">&#x27;&quot;&gt;</span></span><br><span class="line"><span class="string">&lt;input type=submit name=submit value=&quot;搜索&quot;/&gt;</span></span><br><span class="line"><span class="string">&lt;/form&gt;</span></span><br><span class="line"><span class="string">&lt;/center&gt;</span></span><br><span class="line"><span class="string">?&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>页面：用户在输入框输入内容，页面将内容提交，并显示经函数过滤后的内容<code>htmlspecialchars()</code>函数把字符<code>&amp;&quot;&#39;&lt;</code>转换为 HTML 实体，而非标签等元素，如<code>echo htmlspecialchars(&quot;&lt;a&gt;e&lt;/a&gt;&quot;)</code>–&gt;将在页面输出<code>&lt;a&gt;e&lt;/a&gt;</code><br>由于只是显示时过滤，GET时并无过滤，payload: <code>test&quot;&gt;&lt;script&gt;alert(1)&lt;/script&gt;</code><br>句柄嵌入可以吗？<code>onclick=&quot;alert(123);&quot; </code></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;input name=keyword value=<span class="string">&quot;&#x27;.<span class="subst">$str</span>.&#x27;&quot;</span>&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
 <p>&lt;实体编码后失去原</p>
 <p>url编码不存在转义功能，实体编码才是转义 ’被编码了为什么能被闭合掉 ‘在实体编码后就是普通字符 实体编码作用是将<code>\&lt;</code>转移掉，’无论是否实体编码都是有闭合效果，不算特殊字符 懂了 </p>
 <p><a href="#jump1">跳转到点</a></p>
@@ -406,7 +418,7 @@
           
 <br><br><br><br><br><br><br><br><br><br><br><br>
 <!-- 最多就这么多br 再多就能滚动了 -->
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=110 src="http://music.163.com/outchain/player?type=0&id=8190620163&auto=1&height=90"></iframe>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=110 src="http://music.163.com/outchain/player?type=0&id=8190620163&auto=0&height=90"></iframe>
 <!-- http://music.163.com/song/media/outer/url?id=1851244378.mp3 -->
 <!-- 不行 只能单曲 -->
 <audio id="bgmusic" src="" autoplay="autoplay" loop="loop" style="display: block; width: 3%; height:3%;"></audio>
