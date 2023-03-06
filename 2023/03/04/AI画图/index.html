@@ -106,7 +106,7 @@
 <meta property="og:description" content="概要未深入了解，本文内容较浅，主要介绍一下快速使用的方法：①微信小程序搜ai即可得到一些能立刻用的文转图、图转图平台，如YUAN初；电脑端有creator.nolibox.com、https:&#x2F;&#x2F;midjourney.com&#x2F;account(需翻墙)等▲，缺点是可调整的参数没那么多。 2017年被提出的Transformer架构及随后的预训练模型使语言&#x2F;图像理解、生成到了新的阶段，预训练">
 <meta property="og:locale">
 <meta property="article:published_time" content="2023-03-04T09:08:53.000Z">
-<meta property="article:modified_time" content="2023-03-06T01:35:31.436Z">
+<meta property="article:modified_time" content="2023-03-06T01:54:25.912Z">
 <meta property="article:author" content="酷热覆天,喝断晚晴">
 <meta name="twitter:card" content="summary">
 
@@ -333,19 +333,19 @@
       
 
       
-        <h4 id="概要"><a href="#概要" class="headerlink" title="概要"></a>概要</h4><p>未深入了解，本文内容较浅，主要介绍一下快速使用的方法：<br>①微信小程序搜ai即可得到一些能立刻用的文转图、图转图平台，如<code>YUAN初</code>；电脑端有<a target="_blank" rel="noopener" href="https://creator.nolibox.com/"><u>creator.nolibox.com</u></a>、<u><a target="_blank" rel="noopener" href="https://midjourney.com/account">https://midjourney.com/account</a></u>(需翻墙)等▲，缺点是可调整的参数没那么多。</p>
+        <h3 id="概要"><a href="#概要" class="headerlink" title="概要"></a>概要</h3><p>未深入了解，本文内容较浅，主要介绍一下快速使用的方法：<br>①微信小程序搜ai即可得到一些能立刻用的文转图、图转图平台，如<code>YUAN初</code>；电脑端有<a target="_blank" rel="noopener" href="https://creator.nolibox.com/"><u>creator.nolibox.com</u></a>、<u><a target="_blank" rel="noopener" href="https://midjourney.com/account">https://midjourney.com/account</a></u>(需翻墙)等▲，缺点是可调整的参数没那么多。</p>
 <p>2017年被提出的Transformer架构及随后的预训练模型使语言&#x2F;图像理解、生成到了新的阶段，预训练模型引发了AIGC(AI Generated Content)能力的质变。AI画图产品，则或最早出自去年2月；去年7月Midjourney在社交平台Discord上公测，点开即用，在一幅数字油画获奖后热度窜升，描述词&#x2F;“元素法典”随后被不断丰富；Stable Diffusion<strong>开源</strong>于去年8月，一个月前专攻写实效果的CHilloutmix等模型通过模型分享社区Civitai普及，后续下架但部分模型又重新上架，半个月前指定姿态的插件ControlNet开始传播。目前有有文转图，图转图、指定风格、氛围、构图、姿态、模型等能力，能在十张图、十分钟的条件下大致完成<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1aM411n79A/"><u>对例如张颂文等指定人物、物品的模型的训练</u></a>。<br>与以往被封禁的技术作对比，实际上可能有过之而无不及，但或许由于其在绘画方面的通用性及软件代码已开源，难以管理，隐患或许巨大。目前本地部署对硬件和调试能力有少许要求，但在线部署的难度较低，无需了解其实现；同时随着技术的完善和发展，软件的易用性和硬件平均水平将明显提高，了解并使用深度学习相关的应用或许是趋势；b站上一位初三的学生，已能较熟练地部署使用并发布教程。对这些技术，尽管会有人造诣颇深，而笔者了解较浅，但大部分人可能也并不十分了解，故大致介绍一下笔者了解到的情况，欢迎分享经验；</p>
  <span id="more"></span>
 
-<h4 id="部署使用的几种途径介绍"><a href="#部署使用的几种途径介绍" class="headerlink" title="部署使用的几种途径介绍"></a>部署使用的几种途径介绍</h4><p>由于只看了视频，尚未实践，仅能做大致介绍</p>
-<h5 id="②在线部署"><a href="#②在线部署" class="headerlink" title="②在线部署"></a>②在线部署</h5><p>Colaboratory, <a target="_blank" rel="noopener" href="https://colab.research.google.com/"><u>Colab</u></a>(需翻墙)：提供免费的GPU和完善的机器学习环境，可直接复制一些项目在线运行，点开即用，国内的类似平台有AutoDL、Aistudio，基本流程大约20min：<br>①<strong>AiStudio</strong>：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1414y1A7as/"><u>一键体验文生图、图生图能力</u></a><br>②<strong>AutoDL</strong>：<u><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1AT411S7fS/">AI绘画云端部署-整合版3.0</a></u>、<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1fs4y1x7p2/">模型</a><a target="_blank" rel="noopener" href="https://www.bilibili.com/read/cv21450198">训练</a><br>③<strong>Colab</strong>: 在对笔记本分配资源后复制并输入<a target="_blank" rel="noopener" href="https://pastebin.com/HxfB5AYA"><u>pastebin.com&#x2F;HxfB5AYA</u></a>的指令	&#x2F;	<a href="camenduru/stable-diffusion-webui-colab"><u>camenduru&#x2F;stable-diffusion-webui-colab</u></a>–&gt;Open In COlab</p>
+<h3 id="部署使用的几种途径介绍"><a href="#部署使用的几种途径介绍" class="headerlink" title="部署使用的几种途径介绍"></a>部署使用的几种途径介绍</h3><p>由于只看了视频，尚未实践，仅能做大致介绍</p>
+<h4 id="②在线部署"><a href="#②在线部署" class="headerlink" title="②在线部署"></a>②在线部署</h4><p>Colaboratory, <a target="_blank" rel="noopener" href="https://colab.research.google.com/"><u>Colab</u></a>(需翻墙)：提供免费的GPU和完善的机器学习环境，可直接复制一些项目在线运行，点开即用，国内的类似平台有AutoDL、Aistudio，基本流程大约20min：<br>①<strong>AiStudio</strong>：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1414y1A7as/"><u>一键体验文生图、图生图能力</u></a><br>②<strong>AutoDL</strong>：<u><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1AT411S7fS/">AI绘画云端部署-整合版3.0</a></u>、<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1fs4y1x7p2/">模型</a><a target="_blank" rel="noopener" href="https://www.bilibili.com/read/cv21450198">训练</a><br>③<strong>Colab</strong>: 在对笔记本分配资源后复制并输入<a target="_blank" rel="noopener" href="https://pastebin.com/HxfB5AYA"><u>pastebin.com&#x2F;HxfB5AYA</u></a>的指令	&#x2F;	<a href="camenduru/stable-diffusion-webui-colab"><u>camenduru&#x2F;stable-diffusion-webui-colab</u></a>–&gt;Open In COlab</p>
 <p>具体教程可搜b站秋葉aaaki、小李xiaolxl、人工治障，貌似相当完备</p>
-<h5 id="③本地部署："><a href="#③本地部署：" class="headerlink" title="③本地部署："></a>③本地部署：</h5><ol>
+<h4 id="③本地部署："><a href="#③本地部署：" class="headerlink" title="③本地部署："></a>③本地部署：</h4><ol>
 <li>需要一张显存高于8G的显卡，4G、6G的显卡只能生成较小的图片，4G以下的显卡应该无法画出；</li>
 <li>可能需要一定调试能力。目前的软件整合包是由秋葉aaaki制作的，在已经停止服务的<u><a target="_blank" rel="noopener" href="https://support.qq.com/products/488228/">免费客服页面</a></u>可以看到，使用者可能遇到由于软件版本等不知名原因导致的几十种错误问题，一些问题较为罕见或修复繁琐，可能会暂时停止他们的尝试。</li>
 </ol>
 <p>具体教程、资源可搜b站秋葉aaaki、小李xiaolxl、人工治障</p>
-<h4 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h4><ul>
+<h3 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h3><ul>
 <li>建筑、模型设计</li>
 <li><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1g24y1V7pz/"><u>动画【剪刀石头布】</u></a>、</li>
 <li><u><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1hg4y1n7VZ/">NFT</a></u></li>
@@ -531,7 +531,7 @@ setInterval("toggleSound()",1);
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A6%82%E8%A6%81"><span class="nav-number">1.</span> <span class="nav-text">概要</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%83%A8%E7%BD%B2%E4%BD%BF%E7%94%A8%E7%9A%84%E5%87%A0%E7%A7%8D%E9%80%94%E5%BE%84%E4%BB%8B%E7%BB%8D"><span class="nav-number">2.</span> <span class="nav-text">部署使用的几种途径介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E2%91%A1%E5%9C%A8%E7%BA%BF%E9%83%A8%E7%BD%B2"><span class="nav-number">2.1.</span> <span class="nav-text">②在线部署</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E2%91%A2%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2%EF%BC%9A"><span class="nav-number">2.2.</span> <span class="nav-text">③本地部署：</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="nav-number">3.</span> <span class="nav-text">应用场景</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A6%82%E8%A6%81"><span class="nav-number">1.</span> <span class="nav-text">概要</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%83%A8%E7%BD%B2%E4%BD%BF%E7%94%A8%E7%9A%84%E5%87%A0%E7%A7%8D%E9%80%94%E5%BE%84%E4%BB%8B%E7%BB%8D"><span class="nav-number">2.</span> <span class="nav-text">部署使用的几种途径介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E2%91%A1%E5%9C%A8%E7%BA%BF%E9%83%A8%E7%BD%B2"><span class="nav-number">2.1.</span> <span class="nav-text">②在线部署</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E2%91%A2%E6%9C%AC%E5%9C%B0%E9%83%A8%E7%BD%B2%EF%BC%9A"><span class="nav-number">2.2.</span> <span class="nav-text">③本地部署：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="nav-number">3.</span> <span class="nav-text">应用场景</span></a></li></ol></div>
             
 
           </div>
